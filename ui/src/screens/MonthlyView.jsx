@@ -9,14 +9,14 @@ import Legend from '../components/Legend.jsx';
 import ChartCanvas from '../components/ChartCanvas.jsx';
 import { SegBare } from '../components/Controls.jsx';
 import { css, tooltipBase, baseOptions, xScale, yScale } from '../lib/chart.js';
-import { MON, p2, fK, fCr, fN, fS, fP } from '../lib/format.js';
+import { MON, p2, fK, fCr, fN, fS, fP, endOf, labFull } from '../lib/format.js';
 
 const RUNS = [
   { k: 'actual', name: 'Actual', col: '--reiq-chart-1', cls: '' },
   { k: 'm3', name: 'Model M3 run', col: '--reiq-chart-2', cls: 'dash' },
   { k: 'm2', name: 'Model M2 run', col: '--reiq-chart-6', cls: 'dash' },
   { k: 'm1', name: 'Model M1 run', col: '--reiq-chart-5', cls: 'dash' },
-  { k: 'latest', name: 'Latest run (data to 4 Oct)', col: '--reiq-text-primary', cls: 'dot' },
+  { k: 'latest', name: 'Latest run', col: '--reiq-text-primary', cls: 'dot' },
   { k: 's3', name: 'Sales team M3', col: '--reiq-chart-3', cls: 'dash' },
   { k: 's2', name: 'Sales team M2', col: '--reiq-chart-3', cls: 'dot' },
   { k: 's1', name: 'Sales team M1', col: '--reiq-chart-3', cls: '' },
@@ -29,8 +29,11 @@ const AGO = { 3: 'three months', 2: 'two months', 1: 'one month' };
 
 let pendingScroll = false;
 
-export default function MonthlyView({ V, vm, onPick }) {
+export default function MonthlyView({ V, vm, onPick, run = 'm3' }) {
+  const K = +run.slice(1);   // the run picked in the dropdown: 3, 2 or 1 months ahead
   const { D, level, mea, nodeKey, theme, useSS } = useApp();
+  const lastAct = D.weeks[D.histN - 1], toDate = endOf(lastAct), fromWk = labFull(lastAct);   // last actual week, read from the data
+  const RUNS_SHOWN = RUNS.filter((s) => !/^[ms][123]$/.test(s.k) || s.k.endsWith(String(K))).map((s) => (s.k === 'latest' ? { ...s, name: 'Latest run (data to ' + toDate.slice(0, 6) + ')' } : s));
   const [view, setView] = useSS('vt.view', 'chart');
   const [hidden, setHidden] = useSS('vt.hidden', { s3: true, s2: true, s1: true });
   const [cmpOpen, setCmpOpen] = useSS('vt.cmp', false);
@@ -45,7 +48,7 @@ export default function MonthlyView({ V, vm, onPick }) {
 
   const config = useMemo(() => {
     if (!n) return null;
-    const ds = RUNS.map((s) => { const c = css(s.col); const isA = s.k === 'actual', isL = s.k === 'latest';
+    const ds = RUNS_SHOWN.map((s) => { const c = css(s.col); const isA = s.k === 'actual', isL = s.k === 'latest';
       return { label: s.name, data: n[s.k], borderColor: c, backgroundColor: c, borderWidth: isA ? 2.5 : 1.75, borderDash: s.cls === 'dash' ? [6, 4] : (s.cls === 'dot' ? [2, 3] : []),
         pointRadius: isA ? 3 : (isL ? 3.5 : 2.5), pointStyle: s.k.startsWith('s') ? 'rectRot' : 'circle', spanGaps: false, hidden: !!hidden[s.k], _k: s.k, order: isA ? 0 : (isL ? 1 : 2) }; });
     const vals = ds.filter((d) => !d.hidden).flatMap((d) => d.data.filter((v) => v != null)); const lo = Math.min(...vals) * 0.85; const step = lo >= 1e7 ? 5e6 : (lo >= 1e5 ? 5e5 : undefined);
@@ -60,11 +63,11 @@ export default function MonthlyView({ V, vm, onPick }) {
           title: (i) => VM[i[0].dataIndex].label + (VM[i[0].dataIndex].complete ? '' : ' (not complete)'),
           label: (i) => { const a = n.actual[i.dataIndex]; const e = (a && i.dataset._k !== 'actual') ? '  (' + fS(i.raw / a - 1) + ' vs actual)' : ''; return ' ' + i.dataset.label + ': ' + fN(i.raw) + e; } } } } },
     };
-  }, [n, mea, hidden, vm, theme, VM]);
+  }, [n, mea, hidden, vm, theme, VM, K]);
 
   const label = D.levels[level].nodes[nodeKey].label;
   const idx = VM.findIndex((x) => x.m === vm), mm = VM[idx], A = n.actual[idx];
-  const tiles = [3, 2, 1].map((k) => { const v = n['m' + k][idx];
+  const tiles = [K].map((k) => { const v = n['m' + k][idx];
     const base = { what: 'The model\'s forecast for ' + mm.label + ' from the M' + k + ' run, the run made ' + AGO[k] + ' before the month starts, using actuals to ' + cutText(mm.m, k) + '.',
       how: 'Sum of the weekly forecasts from that run for weeks that fall in ' + mm.label + ' (a week that straddles two months is split by days, for example 4/7 to one month and 3/7 to the next).' };
     return v != null
@@ -74,8 +77,8 @@ export default function MonthlyView({ V, vm, onPick }) {
           i: { ...base, read: 'Not available yet: this run can only be made once actuals to ' + cutText(mm.m, k) + ' exist.' } }; });
   if (mm.complete) tiles.push({ l: 'Actual', v: fCr(A), d: mm.weeks + ' weeks',
     i: { what: 'What was actually sold (primary sales) in ' + mm.label + '.', how: 'Sum of weekly primary sales for the ' + mm.weeks + ' weeks\' worth of days in the month (a week that straddles two months is split by days).', read: 'This is the benchmark the M3, M2 and M1 tiles are measured against.' } });
-  else { const L = n.latest[idx]; tiles.push({ l: mm.actualWeeks ? 'Latest run, part actual' : 'Latest run', v: L != null ? fCr(L) : '—', d: mm.actualWeeks ? `${mm.actualWeeks} of ${mm.weeks} weeks actual` : 'data to 4 Oct 2026',
-    i: { what: 'The most recent view of ' + mm.label + ', from the latest run (data to the week of 28 Sep 2026).', how: mm.actualWeeks ? 'Weeks already sold are actuals; the remaining weeks come from the latest run.' : 'All weeks come from the latest run, as there are no actuals for this month yet.', read: 'Use it as the current best estimate. It will settle as the month closes and actuals replace forecast weeks.' } }); }
+  else { const L = n.latest[idx]; tiles.push({ l: mm.actualWeeks ? 'Latest run, part actual' : 'Latest run', v: L != null ? fCr(L) : '—', d: mm.actualWeeks ? `${mm.actualWeeks} of ${mm.weeks} weeks actual` : 'data to ' + toDate,
+    i: { what: 'The most recent view of ' + mm.label + ', from the latest run (data to the week of ' + fromWk + ').', how: mm.actualWeeks ? 'Weeks already sold are actuals; the remaining weeks come from the latest run.' : 'All weeks come from the latest run, as there are no actuals for this month yet.', read: 'Use it as the current best estimate. It will settle as the month closes and actuals replace forecast weeks.' } }); }
 
   const cell = (v, a) => (v == null ? <td>–</td> : <td>{fN(v)}{a ? <> <span style={{ color: 'var(--reiq-text-helper)', fontSize: 11 }}>{vErr(v, a)}</span></> : null}</td>);
   // month-on-month and year-on-year: actuals where the month is complete, otherwise the latest run
@@ -106,18 +109,18 @@ export default function MonthlyView({ V, vm, onPick }) {
           <SegBare ariaLabel="View" value={view} onChange={setView} options={[{ v: 'chart', label: 'Chart' }, { v: 'table', label: 'Table' }]} /></div>
         <details className="wdetails more"><summary>About this view</summary><p className="note">Monthly totals of weekly primary sales (a week that straddles two months is split by days). Each run is a full retrain with data only up to its cut-off, so nothing in it knows what happened after. Selected month: <strong>{mm.label}</strong>. Showing: <strong>{label}</strong>, {level === 'National' ? 'national' : 'Kolkata depots'}.</p></details>
         {view === 'chart' ? (
-          <div><Legend series={RUNS} hidden={hidden} onToggle={(k) => setHidden((h) => ({ ...h, [k]: !h[k] }))} />
-            <ChartCanvas config={config} label="Monthly demand: actual and the M3, M2 and M1 forecast runs" />
+          <div><Legend series={RUNS_SHOWN} hidden={hidden} onToggle={(k) => setHidden((h) => ({ ...h, [k]: !h[k] }))} />
+            <ChartCanvas config={config} label={"Monthly demand: actual and the M" + K + " forecast run"} />
             {cmpOpen && cur ? <CompareCard mm={mm} cur={cur} cmps={cmps} mea={mea} onClose={closeCmp} DR={DR} V={V} nodeKey={nodeKey} vm={vm} basis={basis} setBasis={setBasis} />
               : <p className="foot">Click any month on the chart, or pick a target month, to compare it with last month and with the same month last year.</p>}</div>
         ) : (
           <div className="tablewrap"><table>
-            <thead><tr><th>Month</th><th>Actual</th><th>Model M3</th><th>Model M2</th><th>Model M1</th><th>Latest run</th><th>Sales M3</th><th>Sales M2</th><th>Sales M1</th></tr></thead>
+            <thead><tr><th>Month</th><th>Actual</th><th>Model M{K}</th><th>Latest run</th><th>Sales M{K}</th></tr></thead>
             <tbody>{VM.map((m, i) => { const a = n.actual[i]; return (
-              <tr key={m.m} className={m.m === vm ? 'sel' : ''}><td>{m.label}{!m.complete && <span className="pill">open</span>}</td>{cell(a)}{cell(n.m3[i], a)}{cell(n.m2[i], a)}{cell(n.m1[i], a)}{cell(n.latest[i], null)}{cell(n.s3[i], a)}{cell(n.s2[i], a)}{cell(n.s1[i], a)}</tr>); })}</tbody>
+              <tr key={m.m} className={m.m === vm ? 'sel' : ''}><td>{m.label}{!m.complete && <span className="pill">open</span>}</td>{cell(a)}{cell(n['m' + K][i], a)}{cell(n.latest[i], null)}{cell(n['s' + K][i], a)}</tr>); })}</tbody>
           </table></div>
         )}
-        <details className="wdetails more"><summary>Notes and limits</summary><p className="foot">M3, M2 and M1 are runs made with data to the end of the month 3, 2 and 1 months before the target month; a run appears only once its cut-off has passed and the data exists, so November M1 needs October actuals and December M2 and M1 need Oct and Nov actuals. Latest run covers weeks after 28 Sep 2026 and the 26-week horizon ends at the end of March 2027. Sales-team forecasts exist only to Sep 2026. {level === 'National' ? '' : 'Depot runs use seasonal naive and LightGBM only (no ETS), and single depots are noisier than the national total. '}The ensemble weights were set by hand while looking at this same period, so completed-month accuracy is optimistic. All data is synthetic.</p></details>
+        <details className="wdetails more"><summary>Notes and limits</summary><p className="foot">M3, M2 and M1 are runs made with data to the end of the month 3, 2 and 1 months before the target month; a run appears only once its cut-off has passed and the data exists, so November M1 needs October actuals and December M2 and M1 need Oct and Nov actuals. Latest run covers weeks after {fromWk} and the 26-week horizon ends at the end of March 2027. Sales-team forecasts exist only to Sep 2026. {level === 'National' ? '' : 'Depot runs use seasonal naive and LightGBM only (no ETS), and single depots are noisier than the national total. '}The ensemble weights were set by hand while looking at this same period, so completed-month accuracy is optimistic. All data is synthetic.</p></details>
       </section>
       <AccuracyCard V={V} />
     </>

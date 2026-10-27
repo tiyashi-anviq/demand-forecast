@@ -21,13 +21,13 @@ export default function AccuracyCard({ V }) {
   const nProducts = D.levels[level].products.length, keys = useMemo(() => ['ALL'], []);
   const done = VM.map((m, i) => (m.complete ? i : -1)).filter((i) => i >= 0);
 
-  const pool = (k, ks, idxs) => { let a = 0, e = 0, o = 0, u = 0, c = 0, un = 0, on = 0, uF = 0, uA = 0, oF = 0, oA = 0;
-    ks.forEach((key) => { const n = ni(key); if (!n) return; idxs.forEach((i) => { const A = n.actual[i], F = n['m' + k][i]; if (A == null || F == null) return; a += A; e += Math.abs(F - A); o += Math.max(F - A, 0); u += Math.max(A - F, 0); c++; if (F < A) { un++; uF += F; uA += A; } else if (F > A) { on++; oF += F; oA += A; } }); });
+  const pool = (k, ks, idxs, pre = 'm') => { let a = 0, e = 0, o = 0, u = 0, c = 0, un = 0, on = 0, uF = 0, uA = 0, oF = 0, oA = 0;
+    ks.forEach((key) => { const n = ni(key); if (!n) return; idxs.forEach((i) => { const A = n.actual[i], F = n[pre + k][i]; if (A == null || F == null || n['m' + k][i] == null) return; a += A; e += Math.abs(F - A); o += Math.max(F - A, 0); u += Math.max(A - F, 0); c++; if (F < A) { un++; uF += F; uA += A; } else if (F > A) { on++; oF += F; oA += A; } }); });
     return { a, e, o, u, c, un, on, uF, uA, oF, oA }; };
   const rows = [3, 2, 1].map((k) => {
-    const p = pool(k, keys, done), s = { a: 0, e: 0 };
+    const p = pool(k, keys, done), sp = pool(k, keys, done, 's'), s = { a: 0, e: 0 };
     keys.forEach((key) => { const n = ni(key); if (n) done.forEach((i) => { const A = n.actual[i], S = n['s' + k][i]; if (A != null && S != null && n['m' + k][i] != null) { s.a += A; s.e += Math.abs(S - A); } }); });
-    return { k, months: done.length, acc: p.a ? 1 - p.e / p.a : null, sacc: s.a ? 1 - s.e / s.a : null, over: p.o, under: p.u, a: p.a, n: p.c, un: p.un, on: p.on, ucov: p.uA ? p.uF / p.uA : null, oratio: p.oA ? p.oF / p.oA : null };
+    return { k, months: done.length, acc: p.a ? 1 - p.e / p.a : null, sacc: s.a ? 1 - s.e / s.a : null, sp: { under: sp.u, over: sp.o, ucov: sp.uA ? sp.uF / sp.uA : null, oratio: sp.oA ? sp.oF / sp.oA : null, un: sp.un, on: sp.on, n: sp.c }, over: p.o, under: p.u, a: p.a, n: p.c, un: p.un, on: p.on, ucov: p.uA ? p.uF / p.uA : null, oratio: p.oA ? p.oF / p.oA : null };
   });
 
   const trend = useMemo(() => {
@@ -67,16 +67,20 @@ export default function AccuracyCard({ V }) {
       </div>
       <h3 className="sec-h2">Under- and over-forecast, reported separately</h3>
       <div className="uo">
-        {rows.map((r) => (
+        {rows.map((r) => { const q = r.sp; return (
           <div className="uo-c" key={r.k}>
             <b>M{r.k}</b>
             <div className="uo-u"><span>Under-forecast (lost sales)</span>
-              <b>{r.ucov == null ? '–' : fP(r.ucov)} of demand covered</b>
-              <em>{r.n ? fP(r.un / r.n) : '–'} of months · {fCr(r.under)} {unit} short</em></div>
+              <b>Model: {r.ucov == null ? '–' : fP(r.ucov)} of demand covered</b>
+              <em>{r.n ? fP(r.un / r.n) : '–'} of months · {fCr(r.under)} {unit} short</em>
+              <b>Sales team: {q.ucov == null ? '–' : fP(q.ucov)} of demand covered</b>
+              <em>{q.n ? fP(q.un / q.n) : '–'} of months · {fCr(q.under)} {unit} short</em></div>
             <div className="uo-o"><span>Over-forecast (above 100%)</span>
-              <b>{r.oratio == null ? '–' : fP(r.oratio)} of demand</b>
-              <em>{r.n ? fP(r.on / r.n) : '–'} of months · {fCr(r.over)} {unit} extra</em></div>
-          </div>))}
+              <b>Model: {r.oratio == null ? '–' : fP(r.oratio)} of demand</b>
+              <em>{r.n ? fP(r.on / r.n) : '–'} of months · {fCr(r.over)} {unit} extra</em>
+              <b>Sales team: {q.oratio == null ? '–' : fP(q.oratio)} of demand</b>
+              <em>{q.n ? fP(q.on / q.n) : '–'} of months · {fCr(q.over)} {unit} extra</em></div>
+          </div>); })}
       </div>
       <details className="wdetails more"><summary>Notes and limits</summary><p className="foot">Each run is scored on every month and split in two. Where the forecast fell short, the figure is the share of demand it covered (under 100%), and the shortfall is demand the plan did not cover, a sales-loss risk. Where the forecast ran high, the figure is the forecast as a share of demand (over 100%), and the excess is stock built for demand that did not come, which is also a sales-loss signal. The two are never netted against each other.</p></details>
       <h3 className="sec-h2">Accuracy month by month</h3>

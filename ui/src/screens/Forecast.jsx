@@ -23,6 +23,7 @@ export default function Forecast() {
   const fcFrom = FD?.weeks?.[FD.histN];   // first forecast week, read from the data
   const [vm, setVm] = useSS('fc.vm', '2026-11');
   const [, setCmpOpen] = useSS('vt.cmp', false);
+  const [run, setRun] = useSS('vt.run', 'm3');   // which run the monthly view shows; M3 by default
 
   const head = view === 'weekly'
     ? { sub: "Weekly primary sales, the model's outlook to the end of March 2027, and how it compares with the sales team and budget up to the last actuals. After that, only the model forecast.",
@@ -31,7 +32,8 @@ export default function Forecast() {
         tags: <><span className="tag">Runs retrained at each month-end</span><span className="tag out">National and Kolkata depots</span></> };
   const tabs = <Tabs label="Forecast views" value={view} onChange={(v) => navigate('fc', { view: v })} options={TABS} />;
   const extra = view === 'monthly' && V
-    ? <Select id="vm" label="Target month" value={vm} onChange={(x) => { setVm(x); setCmpOpen(true); }} options={V.months.map((x) => ({ v: x.m, label: x.label + (x.complete ? '' : ' (open)') }))} />
+    ? <><Select id="vr" label="Run" value={run} onChange={setRun} options={[{ v: 'm3', label: 'M3 (3 months ahead)' }, { v: 'm2', label: 'M2 (2 months ahead)' }, { v: 'm1', label: 'M1 (1 month ahead)' }]} />
+      <Select id="vm" label="Target month" value={vm} onChange={(x) => { setVm(x); setCmpOpen(true); }} options={V.months.map((x) => ({ v: x.m, label: x.label + (x.complete ? '' : ' (open)') }))} /></>
     : null;
 
   return (
@@ -39,7 +41,7 @@ export default function Forecast() {
       <ScenarioDrawer />
       {view === 'monthly' && !isBase(lev) && <p className="callout"><b>A scenario is applied to the weekly outlook.</b> The monthly runs show the model as it made each forecast, without scenario controls.</p>}
       {view === 'weekly' && <WeeklyView />}
-      {view === 'monthly' && (V ? <MonthlyView V={V} vm={vm} onPick={setVm} /> : <Empty title="Loading monthly runs" text="Fetching from the API…" />)}
+      {view === 'monthly' && (V ? <MonthlyView V={V} vm={vm} onPick={setVm} run={run} /> : <Empty title="Loading monthly runs" text="Fetching from the API…" />)}
     </Page>
   );
 }
