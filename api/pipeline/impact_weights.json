@@ -1,0 +1,299 @@
+{
+ "drivers": [
+  "cat",
+  "tech",
+  "pack",
+  "price",
+  "season",
+  "shelf",
+  "ltype",
+  "dist",
+  "scheme",
+  "timing",
+  "comp"
+ ],
+ "n0": 20,
+ "floor": 2,
+ "n_products": {
+  "Batteries": 24,
+  "Flashlights": 16,
+  "Home care": 27,
+  "Lighting & electrical": 67
+ },
+ "segments": {
+  "Batteries": {
+   "cat": 11,
+   "tech": 37,
+   "pack": 2,
+   "price": 25,
+   "season": 2,
+   "shelf": 2,
+   "ltype": 2,
+   "dist": 10,
+   "scheme": 3,
+   "timing": 2,
+   "comp": 4
+  },
+  "Flashlights": {
+   "cat": 10,
+   "tech": 40,
+   "pack": 2,
+   "price": 21,
+   "season": 4,
+   "shelf": 2,
+   "ltype": 2,
+   "dist": 10,
+   "scheme": 2,
+   "timing": 2,
+   "comp": 5
+  },
+  "Home care": {
+   "cat": 16,
+   "tech": 9,
+   "pack": 4,
+   "price": 30,
+   "season": 2,
+   "shelf": 2,
+   "ltype": 3,
+   "dist": 27,
+   "scheme": 2,
+   "timing": 2,
+   "comp": 3
+  },
+  "Lighting & electrical": {
+   "cat": 6,
+   "tech": 32,
+   "pack": 2,
+   "price": 33,
+   "season": 4,
+   "shelf": 2,
+   "ltype": 2,
+   "dist": 12,
+   "scheme": 2,
+   "timing": 2,
+   "comp": 3
+  }
+ },
+ "share_global": {
+  "cat": 17.9,
+  "tech": 15.9,
+  "pack": 1.1,
+  "price": 38.7,
+  "season": 1.5,
+  "shelf": 1.4,
+  "ltype": 1.0,
+  "dist": 14.2,
+  "scheme": 0.7,
+  "timing": 0.9,
+  "comp": 6.7
+ },
+ "share_segments": {
+  "Batteries": {
+   "cat": 11.2,
+   "tech": 38.2,
+   "pack": 1.9,
+   "price": 26.0,
+   "season": 2.4,
+   "shelf": 0.6,
+   "ltype": 0.6,
+   "dist": 10.5,
+   "scheme": 3.6,
+   "timing": 0.6,
+   "comp": 4.3
+  },
+  "Flashlights": {
+   "cat": 10.3,
+   "tech": 41.6,
+   "pack": 1.1,
+   "price": 22.5,
+   "season": 4.8,
+   "shelf": 1.4,
+   "ltype": 0.9,
+   "dist": 10.4,
+   "scheme": 1.5,
+   "timing": 0.7,
+   "comp": 5.5
+  },
+  "Home care": {
+   "cat": 17.9,
+   "tech": 10.0,
+   "pack": 4.9,
+   "price": 34.1,
+   "season": 2.5,
+   "shelf": 1.4,
+   "ltype": 4.0,
+   "dist": 31.3,
+   "scheme": 0.6,
+   "timing": 1.3,
+   "comp": 3.1
+  },
+  "Lighting & electrical": {
+   "cat": 6.8,
+   "tech": 33.7,
+   "pack": 1.2,
+   "price": 34.9,
+   "season": 4.5,
+   "shelf": 0.4,
+   "ltype": 1.1,
+   "dist": 12.2,
+   "scheme": 1.5,
+   "timing": 0.6,
+   "comp": 3.0
+  }
+ },
+ "spread": {
+  "cat": 2.4,
+  "tech": 5.6,
+  "pack": 1.0,
+  "price": 4.7,
+  "season": 0.3,
+  "shelf": 0.8,
+  "ltype": 0.4,
+  "dist": 2.6,
+  "scheme": 0.3,
+  "timing": 0.9,
+  "comp": 3.6
+ },
+ "by_source": {
+  "own|ALL": {
+   "r2": 0.685,
+   "n": 30,
+   "share": {
+    "cat": 43.1,
+    "tech": 0.7,
+    "pack": 0.1,
+    "price": 51.1,
+    "season": 1.8,
+    "shelf": 1.4,
+    "ltype": 0.0,
+    "dist": 0.2,
+    "scheme": 0.8,
+    "timing": 0.2,
+    "comp": 0.8
+   }
+  },
+  "own|Batteries": {
+   "r2": 0.098,
+   "n": 8,
+   "share": {
+    "cat": 8.5,
+    "tech": 44.7,
+    "price": 34.1,
+    "season": 6.8,
+    "shelf": 0.0,
+    "ltype": 0.0,
+    "dist": 0.0,
+    "scheme": 0.9,
+    "comp": 5.0
+   }
+  },
+  "own|Lighting & electrical": {
+   "r2": 0.039,
+   "n": 18,
+   "share": {
+    "cat": 1.8,
+    "tech": 0.1,
+    "price": 78.7,
+    "season": 11.0,
+    "shelf": 0.1,
+    "ltype": 0.0,
+    "dist": 0.4,
+    "scheme": 4.6,
+    "timing": 0.4,
+    "comp": 2.9
+   }
+  },
+  "market|ALL": {
+   "r2": 0.843,
+   "n": 108,
+   "share": {
+    "cat": 11.1,
+    "tech": 20.4,
+    "pack": 1.4,
+    "price": 35.8,
+    "season": 1.4,
+    "ltype": 1.2,
+    "dist": 18.3,
+    "scheme": 0.6,
+    "timing": 1.1,
+    "comp": 8.5
+   }
+  },
+  "market|Batteries": {
+   "r2": 0.869,
+   "n": 16,
+   "share": {
+    "cat": 4.5,
+    "tech": 63.6,
+    "pack": 2.5,
+    "price": 6.4,
+    "season": 1.3,
+    "ltype": 0.4,
+    "dist": 11.3,
+    "scheme": 8.7,
+    "timing": 0.4,
+    "comp": 0.8
+   }
+  },
+  "market|Flashlights": {
+   "r2": 0.828,
+   "n": 16,
+   "share": {
+    "cat": 0.9,
+    "tech": 73.6,
+    "pack": 1.1,
+    "price": 2.2,
+    "season": 9.0,
+    "ltype": 0.9,
+    "dist": 5.6,
+    "scheme": 2.6,
+    "timing": 0.3,
+    "comp": 3.9
+   }
+  },
+  "market|Home care": {
+   "r2": 0.688,
+   "n": 27,
+   "share": {
+    "tech": 5.7,
+    "pack": 7.7,
+    "price": 30.6,
+    "season": 3.3,
+    "ltype": 6.3,
+    "dist": 43.9,
+    "scheme": 0.5,
+    "timing": 1.5,
+    "comp": 0.4
+   }
+  },
+  "market|Lighting & electrical": {
+   "r2": 0.849,
+   "n": 49,
+   "share": {
+    "cat": 4.2,
+    "tech": 53.5,
+    "pack": 1.2,
+    "price": 17.5,
+    "season": 3.4,
+    "ltype": 1.6,
+    "dist": 15.7,
+    "scheme": 0.8,
+    "timing": 0.6,
+    "comp": 1.6
+   }
+  }
+ },
+ "global": {
+  "cat": 17,
+  "tech": 15,
+  "pack": 2,
+  "price": 37,
+  "season": 2,
+  "shelf": 2,
+  "ltype": 2,
+  "dist": 13,
+  "scheme": 2,
+  "timing": 2,
+  "comp": 6
+ }
+}

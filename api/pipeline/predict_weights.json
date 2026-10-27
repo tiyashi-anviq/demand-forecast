@@ -1,0 +1,139 @@
+{
+ "drivers": [
+  "cat",
+  "tech",
+  "pack",
+  "price",
+  "season",
+  "shelf",
+  "ltype",
+  "dist",
+  "scheme",
+  "timing",
+  "comp"
+ ],
+ "manual": {
+  "cat": 25,
+  "tech": 3,
+  "pack": 20,
+  "price": 12,
+  "season": 8,
+  "shelf": 3,
+  "ltype": 6,
+  "dist": 12,
+  "scheme": 2,
+  "timing": 4,
+  "comp": 5
+ },
+ "n_tasks": {
+  "level": 75,
+  "season": 71,
+  "ramp": 49
+ },
+ "n_products": {
+  "Batteries": 15,
+  "Flashlights": 12,
+  "Home care": 6,
+  "Lighting & electrical": 42
+ },
+ "shrink_n0": 20,
+ "segments": {
+  "Batteries": {
+   "cat": 24,
+   "tech": 3,
+   "pack": 3,
+   "price": 12,
+   "season": 12,
+   "shelf": 2,
+   "ltype": 6,
+   "dist": 12,
+   "scheme": 2,
+   "timing": 6,
+   "comp": 18
+  },
+  "Flashlights": {
+   "cat": 29,
+   "tech": 3,
+   "pack": 6,
+   "price": 9,
+   "season": 9,
+   "shelf": 2,
+   "ltype": 6,
+   "dist": 11,
+   "scheme": 2,
+   "timing": 2,
+   "comp": 21
+  },
+  "Home care": {
+   "cat": 27,
+   "tech": 2,
+   "pack": 10,
+   "price": 10,
+   "season": 10,
+   "shelf": 2,
+   "ltype": 5,
+   "dist": 10,
+   "scheme": 2,
+   "timing": 7,
+   "comp": 15
+  },
+  "Lighting & electrical": {
+   "cat": 30,
+   "tech": 2,
+   "pack": 3,
+   "price": 15,
+   "season": 11,
+   "shelf": 2,
+   "ltype": 6,
+   "dist": 15,
+   "scheme": 2,
+   "timing": 3,
+   "comp": 11
+  }
+ },
+ "cv": {
+  "manual": {
+   "level": 0.6149,
+   "season": 0.0717,
+   "ramp": 0.1965
+  },
+  "equal": {
+   "level": 0.6302,
+   "season": 0.0769,
+   "ramp": 0.1958
+  },
+  "fitted_global": {
+   "level": 0.6121,
+   "season": 0.0647,
+   "ramp": 0.1967
+  },
+  "fitted_segment": {
+   "level": 0.619,
+   "season": 0.066,
+   "ramp": 0.1964
+  }
+ },
+ "cv_gain": {
+  "level": 0.005,
+  "season": 0.098,
+  "ramp": -0.001
+ },
+ "cv_gain_segment": {
+  "level": -0.007,
+  "season": 0.079,
+  "ramp": 0.001
+ },
+ "global": {
+  "cat": 26,
+  "tech": 2,
+  "pack": 3,
+  "price": 13,
+  "season": 13,
+  "shelf": 2,
+  "ltype": 5,
+  "dist": 13,
+  "scheme": 2,
+  "timing": 2,
+  "comp": 19
+ }
+}

@@ -1,0 +1,291 @@
+{
+ "drivers": [
+  "cat",
+  "tech",
+  "pack",
+  "price",
+  "season",
+  "shelf",
+  "ltype",
+  "dist",
+  "scheme",
+  "timing",
+  "comp"
+ ],
+ "manual": {
+  "cat": 25,
+  "tech": 3,
+  "pack": 20,
+  "price": 12,
+  "season": 8,
+  "shelf": 3,
+  "ltype": 6,
+  "dist": 12,
+  "scheme": 2,
+  "timing": 4,
+  "comp": 5
+ },
+ "impact": {
+  "segments": {
+   "Batteries": {
+    "cat": 11,
+    "tech": 37,
+    "pack": 2,
+    "price": 25,
+    "season": 2,
+    "shelf": 2,
+    "ltype": 2,
+    "dist": 10,
+    "scheme": 3,
+    "timing": 2,
+    "comp": 4
+   },
+   "Flashlights": {
+    "cat": 10,
+    "tech": 40,
+    "pack": 2,
+    "price": 21,
+    "season": 4,
+    "shelf": 2,
+    "ltype": 2,
+    "dist": 10,
+    "scheme": 2,
+    "timing": 2,
+    "comp": 5
+   },
+   "Home care": {
+    "cat": 16,
+    "tech": 9,
+    "pack": 4,
+    "price": 30,
+    "season": 2,
+    "shelf": 2,
+    "ltype": 3,
+    "dist": 27,
+    "scheme": 2,
+    "timing": 2,
+    "comp": 3
+   },
+   "Lighting & electrical": {
+    "cat": 6,
+    "tech": 32,
+    "pack": 2,
+    "price": 33,
+    "season": 4,
+    "shelf": 2,
+    "ltype": 2,
+    "dist": 12,
+    "scheme": 2,
+    "timing": 2,
+    "comp": 3
+   }
+  },
+  "share_global": {
+   "cat": 17.9,
+   "tech": 15.9,
+   "pack": 1.1,
+   "price": 38.7,
+   "season": 1.5,
+   "shelf": 1.4,
+   "ltype": 1.0,
+   "dist": 14.2,
+   "scheme": 0.7,
+   "timing": 0.9,
+   "comp": 6.7
+  },
+  "share_segments": {
+   "Batteries": {
+    "cat": 11.2,
+    "tech": 38.2,
+    "pack": 1.9,
+    "price": 26.0,
+    "season": 2.4,
+    "shelf": 0.6,
+    "ltype": 0.6,
+    "dist": 10.5,
+    "scheme": 3.6,
+    "timing": 0.6,
+    "comp": 4.3
+   },
+   "Flashlights": {
+    "cat": 10.3,
+    "tech": 41.6,
+    "pack": 1.1,
+    "price": 22.5,
+    "season": 4.8,
+    "shelf": 1.4,
+    "ltype": 0.9,
+    "dist": 10.4,
+    "scheme": 1.5,
+    "timing": 0.7,
+    "comp": 5.5
+   },
+   "Home care": {
+    "cat": 17.9,
+    "tech": 10.0,
+    "pack": 4.9,
+    "price": 34.1,
+    "season": 2.5,
+    "shelf": 1.4,
+    "ltype": 4.0,
+    "dist": 31.3,
+    "scheme": 0.6,
+    "timing": 1.3,
+    "comp": 3.1
+   },
+   "Lighting & electrical": {
+    "cat": 6.8,
+    "tech": 33.7,
+    "pack": 1.2,
+    "price": 34.9,
+    "season": 4.5,
+    "shelf": 0.4,
+    "ltype": 1.1,
+    "dist": 12.2,
+    "scheme": 1.5,
+    "timing": 0.6,
+    "comp": 3.0
+   }
+  },
+  "spread": {
+   "cat": 2.4,
+   "tech": 5.6,
+   "pack": 1.0,
+   "price": 4.7,
+   "season": 0.3,
+   "shelf": 0.8,
+   "ltype": 0.4,
+   "dist": 2.6,
+   "scheme": 0.3,
+   "timing": 0.9,
+   "comp": 3.6
+  },
+  "n_products": {
+   "Batteries": 24,
+   "Flashlights": 16,
+   "Home care": 27,
+   "Lighting & electrical": 67
+  },
+  "n0": 20,
+  "floor": 2,
+  "r2": {
+   "own|ALL": 0.685,
+   "own|Batteries": 0.098,
+   "own|Lighting & electrical": 0.039,
+   "market|ALL": 0.843,
+   "market|Batteries": 0.869,
+   "market|Flashlights": 0.828,
+   "market|Home care": 0.688,
+   "market|Lighting & electrical": 0.849
+  },
+  "global": {
+   "cat": 17,
+   "tech": 15,
+   "pack": 2,
+   "price": 37,
+   "season": 2,
+   "shelf": 2,
+   "ltype": 2,
+   "dist": 13,
+   "scheme": 2,
+   "timing": 2,
+   "comp": 6
+  }
+ },
+ "predict": {
+  "segments": {
+   "Batteries": {
+    "cat": 24,
+    "tech": 3,
+    "pack": 3,
+    "price": 12,
+    "season": 12,
+    "shelf": 2,
+    "ltype": 6,
+    "dist": 12,
+    "scheme": 2,
+    "timing": 6,
+    "comp": 18
+   },
+   "Flashlights": {
+    "cat": 29,
+    "tech": 3,
+    "pack": 6,
+    "price": 9,
+    "season": 9,
+    "shelf": 2,
+    "ltype": 6,
+    "dist": 11,
+    "scheme": 2,
+    "timing": 2,
+    "comp": 21
+   },
+   "Home care": {
+    "cat": 27,
+    "tech": 2,
+    "pack": 10,
+    "price": 10,
+    "season": 10,
+    "shelf": 2,
+    "ltype": 5,
+    "dist": 10,
+    "scheme": 2,
+    "timing": 7,
+    "comp": 15
+   },
+   "Lighting & electrical": {
+    "cat": 30,
+    "tech": 2,
+    "pack": 3,
+    "price": 15,
+    "season": 11,
+    "shelf": 2,
+    "ltype": 6,
+    "dist": 15,
+    "scheme": 2,
+    "timing": 3,
+    "comp": 11
+   }
+  },
+  "global": {
+   "cat": 26,
+   "tech": 2,
+   "pack": 3,
+   "price": 13,
+   "season": 13,
+   "shelf": 2,
+   "ltype": 5,
+   "dist": 13,
+   "scheme": 2,
+   "timing": 2,
+   "comp": 19
+  }
+ },
+ "match": {
+  "manual": {
+   "level": 0.6149,
+   "season": 0.0717,
+   "ramp": 0.1965
+  },
+  "equal": {
+   "level": 0.6302,
+   "season": 0.0769,
+   "ramp": 0.1958
+  },
+  "predict_cv": {
+   "level": 0.6121,
+   "season": 0.0647,
+   "ramp": 0.1967
+  },
+  "impact_overall": {
+   "level": 0.6148,
+   "season": 0.0799,
+   "ramp": 0.1956
+  },
+  "impact_segment": {
+   "level": 0.6094,
+   "season": 0.0915,
+   "ramp": 0.1966
+  }
+ }
+}

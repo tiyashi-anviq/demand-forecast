@@ -1,0 +1,14 @@
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.venv/
+api/pipeline/*.pkl
+api/pipeline/*.log
+.DS_Store
+*.bak
+*.tmp
+ck_*
+ok_*
+done_*
+archive/

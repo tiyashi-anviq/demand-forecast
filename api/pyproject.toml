@@ -1,0 +1,21 @@
+[project]
+name = "demo-df-api"
+version = "1.0.0"
+description = "AnvIQ demand forecasting demo API"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+]
+
+[dependency-groups]
+# only needed to rebuild the data files: uv sync --group pipeline
+pipeline = [
+    "pandas",
+    "numpy",
+    "lightgbm",
+    "statsmodels",
+]
+
+[tool.uv]
+package = false

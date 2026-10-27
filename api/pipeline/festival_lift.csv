@@ -1,0 +1,181 @@
+category,event,runup_lift,peak_offset,peak_lift,n_years
+Batteries — alkaline,Durga Puja,1.085,2,1.512,2
+Batteries — alkaline,Mahalaya,0.967,3,1.558,2
+Batteries — alkaline,Kojagari Lakshmi Puja,1.183,1,1.512,2
+Batteries — alkaline,Kali Puja / Diwali,1.177,-1,1.512,2
+Batteries — alkaline,Bhai Phonta,1.152,-1,1.445,3
+Batteries — alkaline,Jagaddhatri Puja,1.178,-2,1.445,3
+Batteries — alkaline,Ganesh Chaturthi,0.984,2,1.117,2
+Batteries — alkaline,Vishwakarma Puja,0.984,4,1.433,2
+Batteries — alkaline,Rath Yatra,1.002,4,1.047,3
+Batteries — alkaline,Saraswati Puja,0.971,-6,1.28,3
+Batteries — alkaline,Dol Jatra / Holi,0.891,4,1.027,3
+Batteries — alkaline,Eid ul-Fitr,0.934,3,1.047,3
+Batteries — alkaline,Poila Baisakh / Chaitra Sale,1.004,-2,1.093,3
+Batteries — alkaline,Gangasagar Mela,1.081,-5,1.314,3
+Batteries — alkaline,Book Fair,0.95,-6,1.237,3
+Batteries — alkaline,Christmas / Park Street,1.164,-2,1.314,3
+Batteries — alkaline,Christmas (25 Dec),1.164,-2,1.314,3
+Batteries — alkaline,New Year (1 Jan),1.176,-3,1.314,3
+Batteries — carbon-zinc,Durga Puja,1.121,1,1.313,2
+Batteries — carbon-zinc,Mahalaya,1.054,3,1.448,2
+Batteries — carbon-zinc,Kojagari Lakshmi Puja,1.18,0,1.313,2
+Batteries — carbon-zinc,Kali Puja / Diwali,1.098,-2,1.313,2
+Batteries — carbon-zinc,Bhai Phonta,1.068,-2,1.258,3
+Batteries — carbon-zinc,Jagaddhatri Puja,1.027,-3,1.258,3
+Batteries — carbon-zinc,Ganesh Chaturthi,0.937,3,1.158,2
+Batteries — carbon-zinc,Vishwakarma Puja,1.044,3,1.265,2
+Batteries — carbon-zinc,Rath Yatra,1.009,0,1.06,3
+Batteries — carbon-zinc,Saraswati Puja,0.94,2,1.129,3
+Batteries — carbon-zinc,Dol Jatra / Holi,0.974,3,1.168,3
+Batteries — carbon-zinc,Eid ul-Fitr,0.992,3,1.195,3
+Batteries — carbon-zinc,Poila Baisakh / Chaitra Sale,1.087,1,1.209,3
+Batteries — carbon-zinc,Gangasagar Mela,0.95,-5,1.038,3
+Batteries — carbon-zinc,Book Fair,1.0,0,1.065,3
+Batteries — carbon-zinc,Christmas / Park Street,0.969,-2,1.038,3
+Batteries — carbon-zinc,Christmas (25 Dec),0.969,-2,1.038,3
+Batteries — carbon-zinc,New Year (1 Jan),0.974,-3,1.038,3
+Decorative & festive,Durga Puja,2.145,2,3.938,2
+Decorative & festive,Mahalaya,1.61,3,3.698,2
+Decorative & festive,Kojagari Lakshmi Puja,2.625,1,3.938,2
+Decorative & festive,Kali Puja / Diwali,2.53,-1,3.938,2
+Decorative & festive,Bhai Phonta,2.28,-2,3.445,3
+Decorative & festive,Jagaddhatri Puja,2.147,-3,3.445,3
+Decorative & festive,Ganesh Chaturthi,0.897,4,2.265,2
+Decorative & festive,Vishwakarma Puja,1.299,4,3.85,2
+Decorative & festive,Rath Yatra,0.882,-6,1.153,3
+Decorative & festive,Saraswati Puja,0.816,-6,1.17,3
+Decorative & festive,Dol Jatra / Holi,0.973,1,1.188,3
+Decorative & festive,Eid ul-Fitr,1.062,-1,1.141,3
+Decorative & festive,Poila Baisakh / Chaitra Sale,1.057,4,1.17,3
+Decorative & festive,Gangasagar Mela,0.972,-5,1.267,3
+Decorative & festive,Book Fair,0.857,-6,1.179,3
+Decorative & festive,Christmas / Park Street,1.146,-2,1.267,3
+Decorative & festive,Christmas (25 Dec),1.146,-2,1.267,3
+Decorative & festive,New Year (1 Jan),1.112,-3,1.267,3
+Electrical accessories,Durga Puja,1.185,-1,1.278,2
+Electrical accessories,Mahalaya,1.176,-1,1.307,2
+Electrical accessories,Kojagari Lakshmi Puja,1.171,-2,1.278,2
+Electrical accessories,Kali Puja / Diwali,1.013,-4,1.278,2
+Electrical accessories,Bhai Phonta,1.073,-6,1.342,3
+Electrical accessories,Jagaddhatri Puja,1.011,-6,1.322,3
+Electrical accessories,Ganesh Chaturthi,0.917,4,1.278,2
+Electrical accessories,Vishwakarma Puja,1.152,1,1.348,2
+Electrical accessories,Rath Yatra,0.956,-6,1.146,3
+Electrical accessories,Saraswati Puja,1.127,-2,1.235,3
+Electrical accessories,Dol Jatra / Holi,0.965,-5,1.123,3
+Electrical accessories,Eid ul-Fitr,0.966,4,1.088,3
+Electrical accessories,Poila Baisakh / Chaitra Sale,1.039,0,1.13,3
+Electrical accessories,Gangasagar Mela,1.039,-1,1.12,3
+Electrical accessories,Book Fair,1.049,4,1.087,3
+Electrical accessories,Christmas / Park Street,0.939,2,1.12,3
+Electrical accessories,Christmas (25 Dec),0.939,2,1.12,3
+Electrical accessories,New Year (1 Jan),0.971,1,1.12,3
+Emergency & rechargeable LED,Durga Puja,1.188,2,1.829,2
+Emergency & rechargeable LED,Mahalaya,1.081,3,1.718,2
+Emergency & rechargeable LED,Kojagari Lakshmi Puja,1.319,1,1.829,2
+Emergency & rechargeable LED,Kali Puja / Diwali,1.322,-1,1.829,2
+Emergency & rechargeable LED,Bhai Phonta,1.231,-1,1.608,3
+Emergency & rechargeable LED,Jagaddhatri Puja,1.211,-2,1.608,3
+Emergency & rechargeable LED,Ganesh Chaturthi,0.818,3,1.296,2
+Emergency & rechargeable LED,Vishwakarma Puja,1.003,4,1.374,2
+Emergency & rechargeable LED,Rath Yatra,1.052,-6,1.815,3
+Emergency & rechargeable LED,Saraswati Puja,0.807,4,1.107,3
+Emergency & rechargeable LED,Dol Jatra / Holi,1.05,1,1.152,3
+Emergency & rechargeable LED,Eid ul-Fitr,1.08,3,1.341,3
+Emergency & rechargeable LED,Poila Baisakh / Chaitra Sale,1.129,4,1.312,3
+Emergency & rechargeable LED,Gangasagar Mela,0.8,4,0.916,3
+Emergency & rechargeable LED,Book Fair,0.817,3,1.013,3
+Emergency & rechargeable LED,Christmas / Park Street,0.828,-5,1.055,3
+Emergency & rechargeable LED,Christmas (25 Dec),0.828,-5,1.055,3
+Emergency & rechargeable LED,New Year (1 Jan),0.802,-6,1.055,3
+Flashlights — conventional,Durga Puja,1.152,-2,1.292,2
+Flashlights — conventional,Mahalaya,1.116,0,1.299,2
+Flashlights — conventional,Kojagari Lakshmi Puja,1.126,-3,1.292,2
+Flashlights — conventional,Kali Puja / Diwali,0.984,-5,1.292,2
+Flashlights — conventional,Bhai Phonta,1.051,-5,1.323,3
+Flashlights — conventional,Jagaddhatri Puja,0.989,-6,1.323,3
+Flashlights — conventional,Ganesh Chaturthi,0.958,3,1.292,2
+Flashlights — conventional,Vishwakarma Puja,1.116,0,1.255,2
+Flashlights — conventional,Rath Yatra,0.987,-6,2.593,3
+Flashlights — conventional,Saraswati Puja,0.848,-5,1.061,3
+Flashlights — conventional,Dol Jatra / Holi,0.93,3,1.35,3
+Flashlights — conventional,Eid ul-Fitr,1.024,3,1.5,3
+Flashlights — conventional,Poila Baisakh / Chaitra Sale,1.168,4,1.864,3
+Flashlights — conventional,Gangasagar Mela,0.929,-4,1.096,3
+Flashlights — conventional,Book Fair,0.826,-5,1.042,3
+Flashlights — conventional,Christmas / Park Street,0.944,-6,1.156,3
+Flashlights — conventional,Christmas (25 Dec),0.944,-6,1.156,3
+Flashlights — conventional,New Year (1 Jan),0.981,-2,1.096,3
+Flashlights — rechargeable,Durga Puja,1.1,2,1.702,2
+Flashlights — rechargeable,Mahalaya,1.053,3,1.717,2
+Flashlights — rechargeable,Kojagari Lakshmi Puja,1.201,1,1.702,2
+Flashlights — rechargeable,Kali Puja / Diwali,1.202,-1,1.702,2
+Flashlights — rechargeable,Bhai Phonta,1.218,-1,1.515,3
+Flashlights — rechargeable,Jagaddhatri Puja,1.214,-2,1.515,3
+Flashlights — rechargeable,Ganesh Chaturthi,0.934,1,1.097,2
+Flashlights — rechargeable,Vishwakarma Puja,1.005,4,1.237,2
+Flashlights — rechargeable,Rath Yatra,1.124,-6,1.563,3
+Flashlights — rechargeable,Saraswati Puja,0.841,-3,0.914,3
+Flashlights — rechargeable,Dol Jatra / Holi,0.931,3,1.249,3
+Flashlights — rechargeable,Eid ul-Fitr,1.025,3,1.357,3
+Flashlights — rechargeable,Poila Baisakh / Chaitra Sale,1.083,3,1.543,3
+Flashlights — rechargeable,Gangasagar Mela,0.864,-6,0.968,3
+Flashlights — rechargeable,Book Fair,0.83,-6,0.933,3
+Flashlights — rechargeable,Christmas / Park Street,0.932,-5,1.173,3
+Flashlights — rechargeable,Christmas (25 Dec),0.932,-5,1.173,3
+Flashlights — rechargeable,New Year (1 Jan),0.906,-6,1.173,3
+LED battens & tubelights,Durga Puja,1.452,-2,1.739,2
+LED battens & tubelights,Mahalaya,1.392,-1,1.557,2
+LED battens & tubelights,Kojagari Lakshmi Puja,1.466,-3,1.739,2
+LED battens & tubelights,Kali Puja / Diwali,1.273,-5,1.739,2
+LED battens & tubelights,Bhai Phonta,1.232,-5,1.649,3
+LED battens & tubelights,Jagaddhatri Puja,1.162,-6,1.649,3
+LED battens & tubelights,Ganesh Chaturthi,1.051,3,1.739,2
+LED battens & tubelights,Vishwakarma Puja,1.333,1,1.655,2
+LED battens & tubelights,Rath Yatra,0.921,-6,1.135,3
+LED battens & tubelights,Saraswati Puja,0.999,-3,1.041,3
+LED battens & tubelights,Dol Jatra / Holi,0.871,3,1.059,3
+LED battens & tubelights,Eid ul-Fitr,0.956,3,1.111,3
+LED battens & tubelights,Poila Baisakh / Chaitra Sale,1.023,-1,1.156,3
+LED battens & tubelights,Gangasagar Mela,0.994,-5,1.098,3
+LED battens & tubelights,Book Fair,0.987,-2,1.073,3
+LED battens & tubelights,Christmas / Park Street,0.996,-2,1.098,3
+LED battens & tubelights,Christmas (25 Dec),0.996,-2,1.098,3
+LED battens & tubelights,New Year (1 Jan),1.011,-3,1.098,3
+LED bulbs,Durga Puja,1.257,2,1.707,2
+LED bulbs,Mahalaya,1.154,3,1.557,2
+LED bulbs,Kojagari Lakshmi Puja,1.379,1,1.707,2
+LED bulbs,Kali Puja / Diwali,1.35,-1,1.707,2
+LED bulbs,Bhai Phonta,1.372,-2,1.751,3
+LED bulbs,Jagaddhatri Puja,1.318,-3,1.751,3
+LED bulbs,Ganesh Chaturthi,0.941,4,1.367,2
+LED bulbs,Vishwakarma Puja,1.066,4,1.711,2
+LED bulbs,Rath Yatra,0.91,-6,1.134,3
+LED bulbs,Saraswati Puja,0.865,-6,1.068,3
+LED bulbs,Dol Jatra / Holi,0.92,2,1.2,3
+LED bulbs,Eid ul-Fitr,1.016,0,1.235,3
+LED bulbs,Poila Baisakh / Chaitra Sale,1.102,0,1.239,3
+LED bulbs,Gangasagar Mela,0.987,-4,1.104,3
+LED bulbs,Book Fair,0.874,-5,1.099,3
+LED bulbs,Christmas / Park Street,1.083,-6,1.174,3
+LED bulbs,Christmas (25 Dec),1.083,-6,1.174,3
+LED bulbs,New Year (1 Jan),1.064,-2,1.104,3
+Panels & downlighters,Durga Puja,1.104,-1,1.333,2
+Panels & downlighters,Mahalaya,1.123,0,1.289,2
+Panels & downlighters,Kojagari Lakshmi Puja,1.081,-2,1.333,2
+Panels & downlighters,Kali Puja / Diwali,1.008,-4,1.333,2
+Panels & downlighters,Bhai Phonta,1.027,-4,1.39,3
+Panels & downlighters,Jagaddhatri Puja,0.952,-5,1.39,3
+Panels & downlighters,Ganesh Chaturthi,0.964,4,1.333,2
+Panels & downlighters,Vishwakarma Puja,1.078,1,1.3,2
+Panels & downlighters,Rath Yatra,0.922,3,1.059,3
+Panels & downlighters,Saraswati Puja,1.052,-1,1.242,3
+Panels & downlighters,Dol Jatra / Holi,1.005,-6,1.066,3
+Panels & downlighters,Eid ul-Fitr,0.979,3,1.228,3
+Panels & downlighters,Poila Baisakh / Chaitra Sale,1.035,1,1.117,3
+Panels & downlighters,Gangasagar Mela,1.009,3,1.144,3
+Panels & downlighters,Book Fair,1.053,-2,1.213,3
+Panels & downlighters,Christmas / Park Street,0.931,4,1.114,3
+Panels & downlighters,Christmas (25 Dec),0.931,4,1.114,3
+Panels & downlighters,New Year (1 Jan),0.956,3,1.114,3

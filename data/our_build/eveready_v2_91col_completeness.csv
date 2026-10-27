@@ -1,0 +1,92 @@
+column_no,column,rows_filled,rows_blank,blank_pct,blank_is_expected,when_filled
+1,week_beginning,26934,0,0.0,yes,Always
+2,reporting_level,26934,0,0.0,yes,Always
+3,region,26934,0,0.0,yes,Always
+4,depot_code,26934,0,0.0,yes,Always
+5,depot_name,26934,0,0.0,yes,Always
+6,business_segment,26934,0,0.0,yes,Always
+7,product_category,26934,0,0.0,yes,Always
+8,product_code,26934,0,0.0,yes,Always
+9,product_name,26934,0,0.0,yes,Always
+10,is_new_product,26934,0,0.0,yes,Always
+11,launch_date,2442,24492,90.9,yes,New products only
+12,planned_launch_date,2442,24492,90.9,yes,New products only
+13,festival,7848,19086,70.9,yes,Only in weeks with a festival
+14,festival_sell_in_period,3936,22998,85.4,yes,Only in sell-in weeks for Durga Puja / Kali Puja-Diwali
+15,competitor_activity_note,1302,25632,95.2,yes,Only in weeks with a competitor event
+16,average_selling_price_inr,26934,0,0.0,yes,Always
+17,trade_scheme_discount_pct,26934,0,0.0,yes,Always
+18,trade_scheme_spend_inr,26934,0,0.0,yes,Always
+19,budget_units,26934,0,0.0,yes,Always
+20,budget_value_inr,26934,0,0.0,yes,Always
+21,sales_forecast_3m_ahead_units,26934,0,0.0,yes,Always
+22,sales_forecast_2m_ahead_units,26934,0,0.0,yes,Always
+23,sales_forecast_1m_ahead_units,26934,0,0.0,yes,Always
+24,consensus_forecast_1m_ahead_units,26934,0,0.0,yes,Always
+25,forecast_override_reason,12106,14828,55.1,yes,Only when the sales team overrode the forecast
+26,procurement_request_units,26934,0,0.0,yes,Always
+27,orders_received_units,26934,0,0.0,yes,Always
+28,open_orders_units,26934,0,0.0,yes,Always
+29,primary_sales_units,26934,0,0.0,yes,Always
+30,primary_sales_value_inr,26934,0,0.0,yes,Always
+31,secondary_sales_units,26934,0,0.0,yes,Always
+32,distributor_stock_units,26934,0,0.0,yes,Always
+33,primary_sales_b2c_units,26934,0,0.0,yes,Always
+34,primary_sales_b2b_p1_units,26934,0,0.0,yes,Always
+35,primary_sales_b2b_p2_units,26934,0,0.0,yes,Always
+36,unfulfilled_b2c_units,26934,0,0.0,yes,Always
+37,unfulfilled_b2b_p1_units,26934,0,0.0,yes,Always
+38,unfulfilled_b2b_p2_units,26934,0,0.0,yes,Always
+39,plant_capacity_units,26934,0,0.0,yes,Always
+40,production_required_units,26934,0,0.0,yes,Always
+41,production_allocated_units,26934,0,0.0,yes,Always
+42,opening_stock_units,26934,0,0.0,yes,Always
+43,replenishment_ordered_units,26934,0,0.0,yes,Always
+44,replenishment_received_units,26934,0,0.0,yes,Always
+45,closing_stock_units,26934,0,0.0,yes,Always
+46,safety_stock_units,26934,0,0.0,yes,Always
+47,reorder_point_units,26934,0,0.0,yes,Always
+48,replenishment_truck_day,26934,0,0.0,yes,Always
+49,depot_storage_capacity_value_inr_lakh,22445,4489,16.7,yes,Depot rows only
+50,depot_stock_value_inr_lakh,22445,4489,16.7,yes,Depot rows only
+51,influencer_campaign_active,26934,0,0.0,yes,Always
+52,influencer_spend_inr_lakh,26934,0,0.0,yes,Always
+53,influencer_reach_thousands,26934,0,0.0,yes,Always
+54,influencer_test_control_group,26934,0,0.0,yes,Always
+55,event_note,18174,8760,32.5,yes,Only in weeks with a noted event
+56,pack_format,26934,0,0.0,yes,Always
+57,technology_level,26934,0,0.0,yes,Always
+58,launch_type,2442,24492,90.9,yes,New products only
+59,quick_commerce_ordered_units,5886,21048,78.1,yes,"Only for products listed on quick commerce (16 products), from their listing week"
+60,quick_commerce_delivered_units,5886,21048,78.1,yes,"Only for products listed on quick commerce (16 products), from their listing week"
+61,quick_commerce_order_lines,5886,21048,78.1,yes,"Only for products listed on quick commerce (16 products), from their listing week"
+62,quick_commerce_lines_on_time,5886,21048,78.1,yes,"Only for products listed on quick commerce (16 products), from their listing week"
+63,quick_commerce_lines_in_full,5886,21048,78.1,yes,"Only for products listed on quick commerce (16 products), from their listing week"
+64,quick_commerce_lines_otif,5886,21048,78.1,yes,"Only for products listed on quick commerce (16 products), from their listing week"
+65,quick_commerce_partner_sell_out_units,5886,21048,78.1,yes,"Only for products listed on quick commerce (16 products), from their listing week"
+66,quick_commerce_partner_stock_units,5886,21048,78.1,yes,"Only for products listed on quick commerce (16 products), from their listing week"
+67,quick_commerce_returned_units,5886,21048,78.1,yes,"Only for products listed on quick commerce (16 products), from their listing week"
+68,supplier_moq_units,26934,0,0.0,yes,Always
+69,case_pack_units,26934,0,0.0,yes,Always
+70,supplier_lead_time_days,26934,0,0.0,yes,Always
+71,standard_cost_inr,26934,0,0.0,yes,Always
+72,shelf_life_weeks,26934,0,0.0,yes,Always
+73,service_level_target,26934,0,0.0,yes,Always
+74,supplier_price_break_quantity_units,26934,0,0.0,yes,Always
+75,supplier_price_break_discount_pct,26934,0,0.0,yes,Always
+76,purchase_order_units,4489,22445,83.3,yes,National rows only (POs are placed nationally)
+77,purchase_unit_cost_paid_inr,4489,22445,83.3,yes,National rows only (POs are placed nationally)
+78,transfer_out_units,26934,0,0.0,yes,Always
+79,transfer_in_units,26934,0,0.0,yes,Always
+80,transfer_freight_cost_inr,26934,0,0.0,yes,Always
+81,transfer_counterparty_depot,1006,25928,96.3,yes,Only when a depot transfers stock out or in
+82,lost_sales_units,26934,0,0.0,yes,Always
+83,lost_sales_value_inr,26934,0,0.0,yes,Always
+84,lost_sales_driver,4201,22733,84.4,yes,Only when lost sales are above zero
+85,holding_cost_pct_per_year,26934,0,0.0,yes,Always
+86,supplier_price_break_unit_cost_inr,26934,0,0.0,yes,Always
+87,supplier_tier2_break_quantity_units,26934,0,0.0,yes,Always
+88,supplier_tier2_discount_pct,26934,0,0.0,yes,Always
+89,quick_commerce_weeks_since_listing,5886,21048,78.1,yes,"Only for products listed on quick commerce (16 products), from their listing week"
+90,weighted_distribution_pct,2442,24492,90.9,yes,New products only (npd01-npd04)
+91,numeric_distribution_pct,2442,24492,90.9,yes,New products only (npd01-npd04)
